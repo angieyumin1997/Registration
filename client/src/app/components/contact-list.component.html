@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Mobile</td>
+        <td>Action</td>
+    </tr>
+    <tr *ngFor="let o of allRegistrations;let i = index;" >
+        <td>{{o.name}}</td>
+        <td>{{o.email}}</td>
+        <td>{{o.mobile}}</td>
+        <td>
+            <button type="button" (click)="delete(o.id)">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>

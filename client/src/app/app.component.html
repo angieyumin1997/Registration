@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="column">
+      <h2>Registration</h2>
+  </div>
+</div>
+<div>
+  <button (click)="register()">
+    Add
+  </button>
+  <button (click)="listall()">
+    List
+  </button>
+</div>
+<div *ngIf="add">
+  <app-contact (onNewRegistration)="processNewRegistration($event)">
+    <button type="button" (click)="listall()">Cancel</button>
+  </app-contact>
+</div>
+<div *ngIf="list">
+  <app-contact-list ></app-contact-list>
+</div>

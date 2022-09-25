@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input type="text" id="name" size="30" placeholder="Your name" formControlName="name" [ngClass]="{'red-border':hasError('name')}">
+        <p *ngIf="hasError('name')" class="notice">Please enter your name</p>
+    </div>
+    <div>
+        <label for="email">
+            Email
+        </label>
+        <input type="text" id="email" size="30" placeholder="Your email" formControlName="email" [ngClass]="{'red-border':hasError('email')}">
+        <p *ngIf="hasError('email')" class="notice">Please enter your email</p>
+    </div>
+    <div>
+        <label for="mobile">
+            Mobile
+        </label>
+        <input type="text" id="mobile" size="30" placeholder="Your mobile" formControlName="mobile" [ngClass]="{'red-border':hasError('mobile')}">
+        <p *ngIf="hasError('mobile')" class="notice">Please enter your mobile</p>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid">Register</button>
+    <ng-content></ng-content>
+  </form>
