@@ -15,7 +15,7 @@ export class registrationService{
             .set('Content-Type','application/json')
             .set('Accept','application/json')
         return lastValueFrom(
-            this.http.post<Response>('/api/registration',registration,{headers})
+            this.http.post<Response>('https://obscure-hamlet-44481.herokuapp.com/api/registration',registration,{headers})
             // .pipe()
             )
     }
@@ -23,7 +23,7 @@ export class registrationService{
     allRegistrations():Promise<Registration[]>{
       
         return lastValueFrom(
-            this.http.get<Registration[]>('/api/registration')
+            this.http.get<Registration[]>('https://obscure-hamlet-44481.herokuapp.com/api/registration')
             .pipe(
             map(result=>{
                 return result
@@ -42,7 +42,7 @@ export class registrationService{
         }
 
         return lastValueFrom(
-            this.http.post<Response>('/api/registration/delete',idJson,{headers})
+            this.http.post<Response>('https://obscure-hamlet-44481.herokuapp.com/api/registration/delete',idJson,{headers})
             // .pipe()
             )
     }
